@@ -1,6 +1,6 @@
 import { posts } from '../../shared/projectData';
 import './BlogContent.css'
-import { getAmountPosts } from '../../shared/projectLogic';
+
 import { BlogCard } from '../components/BlogCard';
 
 export const BlogContent = () => {
@@ -9,6 +9,7 @@ export const BlogContent = () => {
   const blogPost = posts.map((item) => {
     return (
       <BlogCard
+        key = {item.id}
         title={item.title}
         description={item.description}
       />
@@ -28,9 +29,9 @@ export const BlogContent = () => {
       </div>
       
 
-      <div className="count">
+      {/* <div className="count">
         <button onClick={ () => getAmountPosts(posts) } className="btnCount">Get amount of posts</button>
-      </div>
+      </div> */}
     </>
   );
 };
